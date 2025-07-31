@@ -21,7 +21,7 @@ export default function CreateProduct() {
     formData.append('price', price);
     formData.append('image', image);
 
-    const res = await fetch('http://localhost:5000/api/products', {
+    const res = await fetch(`${process.env.REACT_APP_URL}/api/products`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${getToken()}`
