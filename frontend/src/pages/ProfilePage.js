@@ -15,7 +15,7 @@ export default function ProfilePage() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/users/me', {
+    fetch(`${process.env.REACT_APP_URL}/api/users/me`, {
       headers: { Authorization: `Bearer ${getToken()}` },
     })
       .then(res => res.json())
@@ -36,7 +36,7 @@ export default function ProfilePage() {
     setMsg('');
     setError('');
 
-    const res = await fetch('http://localhost:5000/api/users/me', {
+    const res = await fetch(`${process.env.REACT_APP_URL}/api/users/me`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
