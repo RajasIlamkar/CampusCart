@@ -3,7 +3,7 @@ import io from 'socket.io-client';
 import styles from '../styles/ChatBox.module.css';
 
 // Create socket instance outside component to persist across re-renders
-const socket = io(`{process.env.REACT_APP_URL}`); // Replace with your backend URL in production
+const socket = io('https://campuscart-production.up.railway.app'); // Replace with your backend URL in production
 
 export default function ChatBox({ currentUser, targetUser }) {
   const [messages, setMessages] = useState([]);
