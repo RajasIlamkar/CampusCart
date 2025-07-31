@@ -23,7 +23,7 @@ export default function Home() {
     if (minPrice) params.set('minPrice', minPrice);
     if (maxPrice) params.set('maxPrice', maxPrice);
 
-    fetch(`http://localhost:5000/api/products?${params.toString()}`)
+    fetch(`${process.env.REACT_APP_URL}/api/products?${params.toString()}`)
       .then(res => res.json())
       .then(setProducts);
   }, [search, category, hostel, sort, minPrice, maxPrice]);
