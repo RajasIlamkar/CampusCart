@@ -17,7 +17,7 @@ export default function EditProduct() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/products/${id}`)
+    fetch(`${process.env.REACT_APP_URL}/api/products/${id}`)
       .then(res => res.json())
       .then(data => {
         if (data) {
@@ -27,7 +27,7 @@ export default function EditProduct() {
             price: data.price || '',
             image: null,
           });
-          setPreviewImage(`http://localhost:5000/${data.imageUrl}`);
+          setPreviewImage(`${process.env.REACT_APP_URL}/${data.imageUrl}`);
         } else {
           setError('Product not found');
         }
