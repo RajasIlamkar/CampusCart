@@ -14,7 +14,7 @@ export default function ProductCard({ product }) {
     <Link to={`/product/${product._id}`} className={styles.cardLink}>
       <div className={styles.card}>
         <img
-          src={`http://localhost:5000/${product.imageUrl}`}
+          src={`{process.env.REACT_APP_URL}/${product.imageUrl}`}
           alt={product.title}
           className={styles.image}
         />
