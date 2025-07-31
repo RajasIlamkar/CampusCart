@@ -24,7 +24,7 @@ export default function MyListings() {
 
   async function handleDelete(id) {
     if (!window.confirm('Are you sure you want to delete this listing?')) return;
-    const res = await fetch(`http://localhost:5000/api/products/${id}`, {
+    const res = await fetch(`${process.env.REACT_APP_URL}/api/products/${id}`, {
       method: 'DELETE',
       headers: {
         Authorization: `Bearer ${getToken()}`
