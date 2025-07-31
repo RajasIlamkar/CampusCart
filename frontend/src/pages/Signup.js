@@ -23,7 +23,7 @@ export default function Signup({ onSignup }) {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const res = await fetch('http://localhost:5000/api/auth/signup', {
+    const res = await fetch(`${process.env.REACT_APP_URL}/api/auth/signup`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
