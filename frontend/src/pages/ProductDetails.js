@@ -10,7 +10,7 @@ export default function ProductDetails() {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/products/${id}`)
+    fetch(`${process.env.REACT_APP_URL}/api/products/${id}`)
       .then(res => res.json())
       .then(data => setProduct(data));
   }, [id]);
@@ -27,7 +27,7 @@ export default function ProductDetails() {
     <div className={styles.container}>
       <div className={styles.productCard}>
         <img
-          src={`http://localhost:5000/${product.imageUrl}`}
+          src={`${process.env.REACT_APP_URL}/${product.imageUrl}`}
           alt={product.title}
           className={styles.image}
         />
