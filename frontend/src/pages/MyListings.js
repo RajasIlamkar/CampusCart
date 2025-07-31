@@ -10,7 +10,7 @@ export default function MyListings() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/products/my', {
+    fetch(`${process.env.REACT_APP_URL}/api/products/my`, {
       headers: {
         Authorization: `Bearer ${getToken()}`
       }
